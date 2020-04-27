@@ -63,3 +63,4 @@ class Decoder2DConv(nn.Module):
         x = self.latentin(x)
         x = self.unflatten(x, self.nfilters, self.inputdims)
         return self.convlayers(x)
+
