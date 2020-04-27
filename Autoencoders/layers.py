@@ -1,5 +1,5 @@
 
-
+from torch import nn
 
 
 class Flatten(nn.Module):
