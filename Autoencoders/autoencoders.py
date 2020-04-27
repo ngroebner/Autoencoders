@@ -1,3 +1,4 @@
+import torch
 from torch import nn
 
 
@@ -53,6 +54,6 @@ class VAE(nn.Module):
         return mu + eps*std
 
     def forward(self, x):
-        mu, logvar = self.encode(x)
+        mu, logvar = self.encoder(x)
         z = self.reparameterize(mu, logvar)
-        return self.decode(z), mu, logvar
+        return self.decoder(z), mu, logvar
