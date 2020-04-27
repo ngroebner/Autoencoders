@@ -43,7 +43,7 @@ class VAE(nn.Module):
     dimension latentdim.  The decoder must take an inpout of size latentdim.
     """
     def __init__(self, encoder, decoder):
-        super(Autoencoder, self).__init__()
+        super(VAE, self).__init__()
         self.encoder = encoder
         self.decoder = decoder
 
