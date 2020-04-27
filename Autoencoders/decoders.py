@@ -39,10 +39,10 @@ class Decoder2DConv(nn.Module):
         self.nchannels = nchannels
         self.kernel_size = 3
         self.stride = 1
-        self.inputdims = outputdims
+        self.outputdims = outputdims
         self.nfilters = nfilters
 
-        self.latentin = nn.Linear(latentdims, nfilters*inputdims[0]*inputdims[1])
+        self.latentin = nn.Linear(latentdims, nfilters*outputdims[0]*outputdims[1])
         self.unflatten = UnFlatten()
 
         # string together arbitrary number of convolutional layers
@@ -61,6 +61,6 @@ class Decoder2DConv(nn.Module):
 
     def forward(self, x):
         x = self.latentin(x)
-        x = self.unflatten(x, self.nfilters, self.inputdims)
+        x = self.unflatten(x, self.nfilters, self.outputdims)
         return self.convlayers(x)
 

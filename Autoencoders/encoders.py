@@ -98,7 +98,7 @@ class VAEEncoder2DConv(nn.Module):
         use_batchnorm=False
     ):
 
-        super(Encoder2DConv, self).__init__()
+        super(VAEEncoder2DConv, self).__init__()
 
         #arguments to Conv2D:
         # in_channels, out_channels, kernel_size,
