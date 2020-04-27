@@ -39,7 +39,7 @@ class Decoder2DConv(nn.Module):
         self.nchannels = nchannels
         self.kernel_size = 3
         self.stride = 1
-        self.inputdims = inputdims
+        self.inputdims = outputdims
         self.nfilters = nfilters
 
         self.latentin = nn.Linear(latentdims, nfilters*inputdims[0]*inputdims[1])
