@@ -1,5 +1,5 @@
 from torch import nn
-from torch.nn import Functional as F
+import torch.nn.functional as F
 
 # from pytorch examples
 # Reconstruction + KL divergence losses summed over all elements and batch
