@@ -27,7 +27,7 @@ class Autoencoder(nn.Module):
         return self.decoder(x)
 
 
-class VAE(nn.module):
+class VAE(nn.Module):
     """Constructs a variational autoencoder given an encoder module, decoder module.
     Think about whether to make this an abstract class. And whether to
     incorporate the loss function.
