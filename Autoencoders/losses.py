@@ -1,6 +1,7 @@
 from torch import nn
 from torch.nn import Functional as F
 
+# from pytorch examples
 # Reconstruction + KL divergence losses summed over all elements and batch
 def vae_loss(recon_x, x, mu, logvar):
     MSE = F.binary_cross_entropy(recon_x, x.view(-1, 784), reduction='sum')
@@ -11,4 +12,4 @@ def vae_loss(recon_x, x, mu, logvar):
     # 0.5 * sum(1 + log(sigma^2) - mu^2 - sigma^2)
     KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
 
-    return BCE + KLD
+    return MSE + KLD
