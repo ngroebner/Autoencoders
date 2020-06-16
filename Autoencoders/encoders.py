@@ -77,6 +77,10 @@ class VAEEncoder2DConv(nn.Module):
     TODO: Create another class for dilated convolutions and
           causal dilated convolutions.
     TODO: Add blocks and residuals? - Maybe better for a different class.
+    Initializing the linear layers with xavier_normal prevents KL loss explosion. E.g.:
+        def init_weights(m):
+        if type(m) == nn.Linear:
+            nn.init.xavier_normal(m.weight)
 
     Args:
         latentdims (int):        Number of dimensions in the latent space
